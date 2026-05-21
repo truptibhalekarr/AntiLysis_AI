@@ -1,0 +1,11 @@
+# Data Wrangling and Mathematics
+numpy
+pandas
+
+# Machine Learning Frameworks (Supervised & Unsupervised pipelines)
+scikit-learn
+joblib
+
+# Interactive Scientific UI & Data Visualizations
+streamlit
+plotly
