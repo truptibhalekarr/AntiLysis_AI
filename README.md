@@ -1,11 +1,12 @@
-```markdown
 # 🧬 AntiLysis AI
 > **Predictive Bioprocess Analytics & High-Fidelity Anomaly Interception System**
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-%23FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white)
-![Accuracy](https://img.shields.io/badge/R2%20Score-99.93%25-emerald?style=for-the-badge)
+<div align="left">
+    <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+    <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn">
+    <img src="https://img.shields.io/badge/Streamlit-%23FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white" alt="Streamlit">
+    <img src="https://img.shields.io/badge/R2%20Score-99.93%25-10B981?style=for-the-badge" alt="Accuracy">
+</div>
 
 ---
 
@@ -38,10 +39,6 @@ The software workspace strictly rejects monolithic scripts, completely decouplin
 ├── 📄 app.py                 # Streamlit high-performance interactive dashboard UI
 ├── 📄 main.py                # Primary ignition switch triggering training pipelines
 └── 📄 requirements.txt       # Global production environment configurations
-
-```
-
----
 
 ## 🔬 Deployed Telemetry Parameters
 
