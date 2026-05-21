@@ -1,75 +1,117 @@
+```markdown
 # 🧬 AntiLysis AI
-> **Advanced Bioprocess Analytics & High-Fidelity Anomaly Interception System**
+> **Predictive Bioprocess Analytics & High-Fidelity Anomaly Interception System**
 
-AntiLysis AI is an end-to-end machine learning system engineered as a high-fidelity predictive digital twin for industrial biochemical reactors. The platform leverages a production-grade modular pipeline structure to predict continuous microbial biomass yield density ($g/L$) in real-time, while automatically tracking physical thresholds to flag cell-stress and prevent batch destruction caused by **Cell Lysis** (cellular rupture).
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-%23FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Accuracy](https://img.shields.io/badge/R2%20Score-99.93%25-emerald?style=for-the-badge)
 
 ---
 
-## 📁 Repository & Core Architecture
+## 📌 Project Overview
 
-The codebase follows a strict industry-standard modular software pattern, completely decoupled into separate pipelines for preprocessing, evaluation, modeling, and deployment serving layouts:
+**AntiLysis AI** functions as a high-fidelity predictive **digital twin** designed for industrial-scale biochemical fermentation reactors. Deployed on an industry-grade production pipeline, the system tracks continuous cellular replication patterns to accurately predict **Biomass Yield** ($g/L$). 
+
+Simultaneously, the engine serves as a real-time safety interceptor—monitoring continuous telemetry inputs to trigger defensive flags against **Cell Lysis** (lethal cellular rupture caused by adverse thermal or acidic environment shifts) before batch destruction occurs.
+
+---
+
+## 📁 Repository Architecture & Modular Design
+
+The software workspace strictly rejects monolithic scripts, completely decoupling operations into independent pipeline layers to maximize scannability and production deployment standards:
 
 ```text
 📁 AntiLysis_AI/
 │
-├── 📁 artifacts/             # Serialized production pipeline weights (model.pkl)
+├── 📁 artifacts/             # Serialized pipeline binaries (model.pkl)
 ├── 📁 data/                  # Simulated bioreactor continuous sensor logs
 │
-├── 📁 src/                   # Core Modular ML Pipeline Scripts
-│   ├── 📄 data_preprocessing.py   # Feature selection and train-test splitting
-│   ├── 📄 evaluation.py           # Evaluation metrics engine (R² Score & MAE calculation)
-│   ├── 📄 generated_data.py       # Bio-constrained raw dataset simulator engine
-│   ├── 📄 model_training.py       # Unified Pipeline wrapper training script
-│   ├── 📄 pipeline.py             # System orchestrator connecting ingestion to modeling
-│   └── 📄 utils.py                # Global binary object serialization helper functions
+├── 📁 src/                   # Core Modular Pipeline Core
+│   ├── 📄 data_preprocessing.py   # Automated feature slicing & train-test splitting
+│   ├── 📄 evaluation.py           # Evaluation metrics engineering console
+│   ├── 📄 generated_data.py       # Bio-constrained raw database simulator engine
+│   ├── 📄 model_training.py       # Unified Pipeline wrapper training engine
+│   ├── 📄 pipeline.py             # System orchestrator connecting ingestion layers
+│   └── 📄 utils.py                # Global object serialization helpers (Pickle)
 │
-├── 📄 app.py                 # Streamlit high-performance interactive UI
-├── 📄 main.py                # Primary ignition switch triggering the training loop
-└── 📄 requirements.txt       # Production dependency configuration log
+├── 📄 app.py                 # Streamlit high-performance interactive dashboard UI
+├── 📄 main.py                # Primary ignition switch triggering training pipelines
+└── 📄 requirements.txt       # Global production environment configurations
 
-🔬 Deployed Telemetry Parameters
-The predictive engine processes 5 continuous independent inputs to evaluate cellular lifecycle tracking profiles:
+```
 
-Timeline Duration (Time_Hours): 0 to 168 hours (Standard industrial 1-week batch lifecycle sequence).
+---
 
-Reactor Temperature (Temperature): Normal baseline operations around 37.0°C (Overheating stress triggers cell apoptosis at >38.0°C).
+## 🔬 Deployed Telemetry Parameters
 
-Media Acidity (pH): Maintained around 7.0 homeostasis bounds (Acidic fluid shock penalties active below <6.5 pH).
+The core machine learning models process 5 continuous inputs to compute active culture density tracks:
 
-Dissolved Oxygen (Dissolved_Oxygen): Target baseline fluid saturation at 50% oxygenation loops.
+| Parameter Name | Metric Units | Operational Boundaries & Safety Constraints |
+| --- | --- | --- |
+| **Time_Hours** | Hours (`0 - 168`) | Maps a standard industrial 7-day batch fermentation lifecycle. |
+| **Temperature** | Celsius (`°C`) | Optimal at ~37°C. Overheating past `>38.0°C` triggers cell death arrays. |
+| **pH** | Log Scale (`0 - 14`) | Maintained at ~7.0 homeostasis. Drops `<6.5` flag acidic fluid shock. |
+| **Dissolved_Oxygen** | Saturation (`%`) | Target baseline fluid oxygenation loops set at `50%`. |
+| **Glucose_Feed_Rate** | Inflow (`g/L/h`) | Continuous carbohydrate nutrition channel tracking profiles. |
 
-Nutrient Feed Rate (Glucose_Feed_Rate): Continuous carbon source supply inflow rate tracking.
+---
 
-📊 Core Performance Metrics
-The underlying machine learning architecture uses a scikit-learn integrated Pipeline encapsulating feature scaling and a RandomForestRegressor matrix (100 independent decision estimators). Upon model execution, the pipeline reports the following performance metrics on holdout verification data:
+## 📊 Performance Benchmark Analytics
 
-R² Score (Coefficient of Determination): 0.9993 (Indicates 99.93% variance accuracy)
+The predictive back-end engine features a scikit-learn integrated `Pipeline` encapsulating multi-variable `StandardScaler` mechanisms mapped natively directly into a **Random Forest Regressor** matrix (100 independent tree estimators).
 
-Mean Absolute Error (MAE): 0.35 g/L (Average prediction deviation margin)
+Upon compilation, the production pipeline logs the following verification benchmarks:
 
-🚀 Local Installation & Deployment Guide
-Follow these steps to spin up the entire application platform locally in your machine:
+* **R² Score (Coefficient of Determination):** `0.9993` *(99.93% variance fit accuracy)*
+* **Mean Absolute Error (MAE):** `0.35 g/L` *(Extremely tight 0.35 deviation margin)*
 
-1. Clone the repository to your local path
+---
+
+## 🚀 Quick Local Deployment Guide
+
+Follow this sequence to setup and run the entire interactive platform locally on your machine:
+
+### 1. Clone the project workspace
+
+```bash
 git clone [https://github.com/truptibhalekarr/AntiLysis_AI.git](https://github.com/truptibhalekarr/AntiLysis_AI.git)
 cd AntiLysis_AI
 
-2. Configure a virtual isolation workspace environment
-# Windows Command Prompt / PowerShell
+```
+
+### 2. Configure environment isolation boundaries
+
+```bash
 python -m venv .venv
 .venv\Scripts\activate
 
-3. Deploy environment runtime libraries dependencies
+```
+
+### 3. Inject runtime dependencies libraries
+
+```bash
 pip install -r requirements.txt
 
-4. Run the end-to-end production pipeline training script
+```
+
+### 4. Fire the ignition switch to compile backend pipeline weights
+
+```bash
 python main.py
 
-5. Launch the high-fidelity web serving dashboard interface
+```
+
+### 5. Stream up the luxury control center dashboard interface
+
+```bash
 streamlit run app.py
 
-🛡️ Future Implementations
-Phase 2 — Unsupervised Alignment: Integrating DBSCAN Clustering Algorithms within the modular pipeline architecture to identify and isolate multi-variable system outliers natively.
+```
 
-Plotly Visuals Integration: Hooking real-time flashing anomaly maps directly onto the web interface rendering layer.
+---
 
+## 🛡️ Future Engineering Roadmap
+
+* **Phase 2 — Unsupervised Alignment:** Integrating **DBSCAN Clustering Algorithms** inside the operational scripts to automatically capture and isolate multi-variable system outlier vectors natively.
+* **Plotly Visuals Integration:** Hooking dynamic multi-dimensional cluster graphs directly onto the user frontend panel.
