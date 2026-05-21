@@ -40,6 +40,10 @@ The software workspace strictly rejects monolithic scripts, completely decouplin
 ├── 📄 main.py                # Primary ignition switch triggering training pipelines
 └── 📄 requirements.txt       # Global production environment configurations
 
+```
+
+---
+
 ## 🔬 Deployed Telemetry Parameters
 
 The core machine learning models process 5 continuous inputs to compute active culture density tracks:
