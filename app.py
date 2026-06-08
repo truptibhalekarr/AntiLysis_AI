@@ -44,7 +44,7 @@ st.markdown("""
         margin-bottom: 15px;
         border-left: 5px solid #3B82F6;
         padding-left: 12px;
-    }
+    }  
     .critical-card {
         background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.05) 100%);
         border: 1px solid rgba(239, 68, 68, 0.3);
