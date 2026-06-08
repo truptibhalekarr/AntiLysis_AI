@@ -1,3 +1,4 @@
+
 # 🧬 AntiLysis AI
 > **Predictive Bioprocess Analytics & High-Fidelity Anomaly Interception System**
 
@@ -12,7 +13,7 @@
 
 ## 📌 Project Overview
 
-**AntiLysis AI** functions as a high-fidelity predictive **digital twin** designed for industrial-scale biochemical fermentation reactors. Deployed on an industry-grade production pipeline, the system tracks continuous cellular replication patterns to accurately predict **Biomass Yield** ($g/L$). 
+**AntiLysis AI** functions as a high-performance predictive **digital twin** engineered for industrial-scale biochemical fermentation reactors. Deployed on a decoupled production pipeline, the system tracks continuous cellular replication patterns to accurately forecast **Biomass Yield** ($g/L$). 
 
 Simultaneously, the engine serves as a real-time safety interceptor—monitoring continuous telemetry inputs to trigger defensive flags against **Cell Lysis** (lethal cellular rupture caused by adverse thermal or acidic environment shifts) before batch destruction occurs.
 
@@ -25,20 +26,22 @@ The software workspace strictly rejects monolithic scripts, completely decouplin
 ```text
 📁 AntiLysis_AI/
 │
-├── 📁 artifacts/             # Serialized pipeline binaries (model.pkl)
-├── 📁 data/                  # Simulated bioreactor continuous sensor logs
+├── 📁 artifacts/          # Serialized pipeline binaries (model.pkl, dbscan_model.pkl)
+├── 📁 data/               # Simulated bioreactor continuous sensor logs (bioreactor_data.csv)
 │
-├── 📁 src/                   # Core Modular Pipeline Core
-│   ├── 📄 data_preprocessing.py   # Automated feature slicing & train-test splitting
+├── 📁 src/                # Core Modular Pipeline Architecture
+│   ├── 📄 anomaly_detection.py    # Unsupervised anomaly clustering pipeline
+│   ├── 📄 data_preprocessing.py   # Automated feature scaling & train-test splitting
 │   ├── 📄 evaluation.py           # Evaluation metrics engineering console
 │   ├── 📄 generated_data.py       # Bio-constrained raw database simulator engine
-│   ├── 📄 model_training.py       # Unified Pipeline wrapper training engine
+│   ├── 📄 model_training.py       # Supervised estimator training engine
 │   ├── 📄 pipeline.py             # System orchestrator connecting ingestion layers
-│   └── 📄 utils.py                # Global object serialization helpers (Pickle)
+│   ├── 📄 utils.py                # Global object serialization helpers (Pickle)
+│   └── 📄 visualizations.py       # Plotly dynamic multi-dimensional cluster graphs
 │
-├── 📄 app.py                 # Streamlit high-performance interactive dashboard UI
-├── 📄 main.py                # Primary ignition switch triggering training pipelines
-└── 📄 requirements.txt       # Global production environment configurations
+├── 📄 app.py              # Streamlit premium responsive executive control panel UI
+├── 📄 main.py             # Primary ignition switch triggering training pipelines
+└── 📄 requirements.txt    # Global production environment configurations
 
 ```
 
@@ -50,22 +53,29 @@ The core machine learning models process 5 continuous inputs to compute active c
 
 | Parameter Name | Metric Units | Operational Boundaries & Safety Constraints |
 | --- | --- | --- |
-| **Time_Hours** | Hours (`0 - 168`) | Maps a standard industrial 7-day batch fermentation lifecycle. |
-| **Temperature** | Celsius (`°C`) | Optimal at ~37°C. Overheating past `>38.0°C` triggers cell death arrays. |
-| **pH** | Log Scale (`0 - 14`) | Maintained at ~7.0 homeostasis. Drops `<6.5` flag acidic fluid shock. |
-| **Dissolved_Oxygen** | Saturation (`%`) | Target baseline fluid oxygenation loops set at `50%`. |
-| **Glucose_Feed_Rate** | Inflow (`g/L/h`) | Continuous carbohydrate nutrition channel tracking profiles. |
+| **Time_Hours** | Hours (`0.0 - 168.0`) | Maps a standard industrial 7-day batch fermentation lifecycle. |
+| **Temperature** | Celsius (`°C`) | Optimal at ~37°C. Overheating past `>38.0°C` triggers thermal cell death arrays. |
+| **pH** | Log Scale (`5.0 - 9.0`) | Maintained at ~7.0 homeostasis. Drops `<6.5` flag acidic fluid shock loops. |
+| **Dissolved_Oxygen** | Saturation (`%`) | Target baseline fluid oxygenation loops locked at a standard `50.0%`. |
+| **Glucose_Feed_Rate** | Inflow (`g/L/h`) | Continuous carbohydrate nutrition input channel tracking. |
 
 ---
 
 ## 📊 Performance Benchmark Analytics
 
-The predictive back-end engine features a scikit-learn integrated `Pipeline` encapsulating multi-variable `StandardScaler` mechanisms mapped natively directly into a **Random Forest Regressor** matrix (100 independent tree estimators).
+The dashboard features a dual-engine machine learning grid evaluating data streams through separate processing tracks to eliminate multi-collinearity and capture operational deviations:
 
-Upon compilation, the production pipeline logs the following verification benchmarks:
+### 1. Supervised Predictive Layer (Regression)
 
-* **R² Score (Coefficient of Determination):** `0.9993` *(99.93% variance fit accuracy)*
-* **Mean Absolute Error (MAE):** `0.35 g/L` *(Extremely tight 0.35 deviation margin)*
+* **Algorithm:** Random Forest Regressor (Ensemble model utilizing 100 independent decision estimators)
+* **$R^2$ Score (Coefficient of Determination):** `0.9993` *(99.93% variance fit accuracy)*
+* **Root Mean Squared Error (RMSE):** `0.48 g/L` *(Extremely stable deviation margin)*
+
+### 2. Unsupervised Anomaly Interception Layer (Clustering)
+
+* **Algorithm:** Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
+* **Hyperparameters Configuration:** `Epsilon: 0.40` | `Min Samples: 4`
+* **Operational Purpose:** Maps live multi-variable data coordinates natively to catch sensor glitches, hardware noise, or mechanical drift without predefined training tags.
 
 ---
 
@@ -89,7 +99,7 @@ python -m venv .venv
 
 ```
 
-### 3. Inject runtime dependencies libraries
+### 3. Inject runtime dependency libraries
 
 ```bash
 pip install -r requirements.txt
@@ -103,16 +113,9 @@ python main.py
 
 ```
 
-### 5. Stream up the luxury control center dashboard interface
+### 5. Stream up the executive control center dashboard interface
 
 ```bash
 streamlit run app.py
 
 ```
-
----
-
-## 🛡️ Future Engineering Roadmap
-
-* **Phase 2 — Unsupervised Alignment:** Integrating **DBSCAN Clustering Algorithms** inside the operational scripts to automatically capture and isolate multi-variable system outlier vectors natively.
-* **Plotly Visuals Integration:** Hooking dynamic multi-dimensional cluster graphs directly onto the user frontend panel.
