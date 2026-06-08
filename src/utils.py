@@ -11,9 +11,9 @@ def save_object(file_path, obj):
         with open(file_path, "wb") as file_obj:
             pickle.dump(obj, file_obj)
 
-        print(f"💾 [Utils] Object successfully saved at: {file_path}")
+        print(f" [Utils] Object successfully saved at: {file_path}")
     except Exception as e:
-        print(f"❌ [Utils] Error saving object: {str(e)}")
+        print(f" [Utils] Error saving object: {str(e)}")
 
 
 def load_object(file_path):
@@ -22,5 +22,5 @@ def load_object(file_path):
         with open(file_path, "rb") as file_obj:
             return pickle.load(file_obj)
     except Exception as e:
-        print(f"❌ [Utils] Error loading object: {str(e)}")
+        print(f" [Utils] Error loading object: {str(e)}")
         return None

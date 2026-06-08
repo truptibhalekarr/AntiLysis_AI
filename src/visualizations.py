@@ -35,8 +35,8 @@ def generate_bioreactor_analysis_chart():
             y="pH",
             color="DBSCAN Interception State",
             color_discrete_map={
-                "Normal Baseline Run": "#10B981",    # Clean Emerald Green for stable baseline
-                "System Outlier / Noise": "#EF4444"  # High-Visibility Vivid Red for anomaly vectors
+                "Normal Baseline Run": "#10B981",    
+                "System Outlier / Noise": "#EF4444"  
             },
             labels={
                 "Temperature": "Reactor Core Temperature (°C)",

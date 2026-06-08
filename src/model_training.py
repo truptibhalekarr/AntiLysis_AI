@@ -6,7 +6,7 @@ from src.utils import save_object
 
 
 def initiate_model_training(X_train, X_test, y_train, y_test):
-    print("🌲 [Modeling] Fusing Scaler and Random Forest into an ML Pipeline...")
+    print(" [Modeling] Fusing Scaler and Random Forest into an ML Pipeline...")
 
     # Creating the strict sequence pipeline object
     # Step 1: Scale the data, Step 2: Pass directly to Random Forest
@@ -17,7 +17,7 @@ def initiate_model_training(X_train, X_test, y_train, y_test):
         ]
     )
 
-    print("⚡ Fitting data features through the pipeline layers...")
+    print(" [Modeling] Fitting data features through the pipeline layers...")
     antilysis_pipeline.fit(X_train, y_train)
 
     # Predict directly using raw X_test (Pipeline internal scale apne aap handle karega)
@@ -31,6 +31,6 @@ def initiate_model_training(X_train, X_test, y_train, y_test):
     save_object(file_path=model_path, obj=antilysis_pipeline)
 
     print(
-        "✓ [Modeling] Entire integrated pipeline saved successfully as model.pkl."
+        " [Modeling] Entire integrated pipeline saved successfully as model.pkl."
     )
     return model_path

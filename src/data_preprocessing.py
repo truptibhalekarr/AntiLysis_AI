@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 
 
 def initiate_data_preprocessing(data_path="data/bioreactor_data.csv"):
-    print("⚙️ [Preprocessing] Loading and splitting biological matrices...")
+    print(" [Preprocessing] Loading and splitting biological matrices...")
 
     df = pd.read_csv(data_path)
 
